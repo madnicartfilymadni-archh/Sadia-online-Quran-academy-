@@ -31,7 +31,7 @@ export const WhyChooseUs: React.FC = () => {
             Key Academy Advantages
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-            Why Choose Sadia Online Quran Academy
+            Why Choose Sadia Online Quran Academy &amp; Islamic Center
           </h2>
           <p className="mt-3 text-base sm:text-lg text-slate-600">
             Dedicated one-to-one Islamic learning structured around your comfort, schedule, and individual pace.

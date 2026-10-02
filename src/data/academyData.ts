@@ -1,7 +1,7 @@
 import { Course, FAQItem } from '../types';
 
 export const ACADEMY_INFO = {
-  name: 'Sadia Online Quran Academy',
+  name: 'Sadia Online Quran Academy & Islamic Center',
   tagline: 'Learn Quran Online With Ease & Confidence',
   teacher: 'Hafiza Sadia',
   role: 'Quran Teacher',

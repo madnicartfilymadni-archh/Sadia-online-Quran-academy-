@@ -57,7 +57,7 @@ Looking forward to your guidance for the free trial class. JazakAllah Khair.`;
             Get In Touch
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-            Contact Sadia Online Quran Academy
+            Contact Sadia Online Quran Academy &amp; Islamic Center
           </h2>
           <p className="mt-3 text-base text-slate-600">
             Reach out directly on WhatsApp to schedule your trial class or ask any questions.

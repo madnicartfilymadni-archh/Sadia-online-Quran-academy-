@@ -15,11 +15,9 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { TrialBookingModal } from './components/TrialBookingModal';
-import { DownloadZipModal } from './components/DownloadZipModal';
 
 export default function App() {
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
-  const [isZipModalOpen, setIsZipModalOpen] = useState(false);
   const [selectedCourseForModal, setSelectedCourseForModal] = useState<string>('Noorani Qaida');
 
   const handleOpenTrialModal = (courseName?: string) => {
@@ -35,8 +33,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAFBF9] text-slate-800 selection:bg-emerald-100 selection:text-emerald-900">
-      {/* 1. Admission Announcement Banner with ZIP Download Trigger */}
-      <AdmissionBanner onOpenDownloadZip={() => setIsZipModalOpen(true)} />
+      {/* 1. Admission Announcement Banner */}
+      <AdmissionBanner />
 
       {/* 2. Top Header Navigation */}
       <Header onOpenTrialModal={() => handleOpenTrialModal()} />
@@ -89,13 +87,6 @@ export default function App() {
         onClose={handleCloseTrialModal}
         defaultCourse={selectedCourseForModal}
       />
-
-      {/* 17. 1-Click ZIP Download Modal */}
-      <DownloadZipModal
-        isOpen={isZipModalOpen}
-        onClose={() => setIsZipModalOpen(false)}
-      />
     </div>
   );
 }
-

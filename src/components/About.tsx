@@ -107,7 +107,7 @@ export const About: React.FC<AboutProps> = ({ onOpenTrialModal }) => {
             </div>
 
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              <strong>Sadia Online Quran Academy</strong> provides personalized, one-to-one Quranic education tailored specifically for young children, girls, and adult women. We remove the barriers of travel, rigid schedules, and crowded classrooms by delivering gentle, authentic Quran teaching directly to your screen.
+              <strong>Sadia Online Quran Academy &amp; Islamic Center</strong> provides personalized, one-to-one Quranic education tailored specifically for young children, girls, and adult women. We remove the barriers of travel, rigid schedules, and crowded classrooms by delivering gentle, authentic Quran teaching directly to your screen.
             </p>
 
             {/* 6 Key Points Grid */}

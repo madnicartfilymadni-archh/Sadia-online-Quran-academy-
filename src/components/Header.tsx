@@ -26,17 +26,23 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTrialModal }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18">
           
-          {/* Zone 1: Single text element wordmark with icon */}
+          {/* Zone 1: Brand Wordmark with Official Logo Image */}
           <a href="#home" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-800 flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
-              <BookOpen className="w-5 h-5 text-emerald-100" />
+            <div className="w-11 h-11 rounded-xl overflow-hidden bg-slate-950 border border-amber-500/30 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform shrink-0">
+              <img
+                src="/src/assets/images/sadia_academy_logo_1790971288578.jpg"
+                alt="Sadia Online Quran Academy & Islamic Center Official Logo"
+                className="w-full h-full object-cover"
+                width={44}
+                height={44}
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-base sm:text-lg font-bold text-slate-900 tracking-tight leading-tight group-hover:text-emerald-700 transition-colors">
                 Sadia Online Quran Academy
               </span>
               <span className="text-[11px] text-slate-500 font-medium leading-none">
-                WhatsApp: {ACADEMY_INFO.phoneDisplay}
+                &amp; Islamic Center · {ACADEMY_INFO.phoneDisplay}
               </span>
             </div>
           </a>

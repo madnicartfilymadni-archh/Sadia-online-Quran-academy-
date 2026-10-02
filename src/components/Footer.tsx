@@ -9,15 +9,27 @@ export const Footer: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800/80">
           
-          {/* Col 1: Brand & Tagline */}
+          {/* Col 1: Brand & Tagline with Official Logo */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-xl bg-emerald-700 flex items-center justify-center text-white shadow-sm">
-                <BookOpen className="w-5 h-5 text-emerald-100" />
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl overflow-hidden bg-slate-900 border border-amber-500/30 flex items-center justify-center shadow-sm shrink-0">
+                <img
+                  src="/src/assets/images/sadia_academy_logo_1790971288578.jpg"
+                  alt="Sadia Online Quran Academy & Islamic Center Logo"
+                  className="w-full h-full object-cover"
+                  width={48}
+                  height={48}
+                  loading="lazy"
+                />
               </div>
-              <span className="text-xl font-bold text-white tracking-tight">
-                {ACADEMY_INFO.name}
-              </span>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold text-white tracking-tight leading-tight">
+                  {ACADEMY_INFO.name}
+                </span>
+                <span className="text-xs text-amber-300 font-medium">
+                  &amp; Islamic Center
+                </span>
+              </div>
             </div>
 
             <p className="text-emerald-400 font-medium text-base">
@@ -134,18 +146,10 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
           <div>
-            © 2026 Sadia Online Quran Academy. All rights reserved.
+            © 2026 Sadia Online Quran Academy &amp; Islamic Center. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
-            <a
-              href="/sadia-online-quran-academy.zip"
-              download="sadia-online-quran-academy.zip"
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-slate-800 hover:bg-emerald-800 text-slate-300 hover:text-white transition-colors"
-            >
-              <span>📦 Download Source Code (.ZIP)</span>
-            </a>
-            <span className="text-slate-600 hidden sm:inline">|</span>
-            <span className="text-slate-400 hidden sm:inline">Providing genuine Quran education for kids, girls &amp; women</span>
+            <span className="text-slate-400">Providing genuine Quran education for kids, girls &amp; women</span>
           </div>
         </div>
 

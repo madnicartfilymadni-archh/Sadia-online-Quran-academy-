@@ -34,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrialModal }) => {
 
             {/* Main Primary H1 for Homepage SEO */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-slate-900 tracking-tight leading-[1.15] text-balance">
-              Sadia Online Quran Academy
+              Sadia Online Quran Academy &amp; Islamic Center
             </h1>
 
             {/* Sub-Headline / Tagline */}

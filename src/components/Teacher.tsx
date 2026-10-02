@@ -48,7 +48,7 @@ export const Teacher: React.FC<TeacherProps> = ({ onOpenTrialModal }) => {
                   {ACADEMY_INFO.role}
                 </p>
                 <p className="text-xs text-slate-500 mt-1">
-                  Sadia Online Quran Academy
+                  Sadia Online Quran Academy &amp; Islamic Center
                 </p>
               </div>
 
