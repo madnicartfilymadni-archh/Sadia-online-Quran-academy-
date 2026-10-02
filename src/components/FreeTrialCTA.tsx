@@ -1,6 +1,7 @@
 import React from 'react';
 import { MessageCircle, Sparkles, CheckCircle, PhoneCall, ArrowRight } from 'lucide-react';
 import { ACADEMY_INFO } from '../data/academyData';
+import admissionPosterImg from '../assets/images/admission_banner_poster_1790971764501.jpg';
 
 export const FreeTrialCTA: React.FC = () => {
   return (
@@ -20,8 +21,11 @@ export const FreeTrialCTA: React.FC = () => {
               
               <div className="relative rounded-2xl overflow-hidden border-2 border-emerald-500/40 shadow-2xl bg-slate-900">
                 <img
-                  src="/src/assets/images/admission_banner_poster_1790971764501.jpg"
-                  alt="Sadia Online Quran Academy Admission Open Poster Flyer - Learn Quran Online with Hafiza Sadia"
+                  src={admissionPosterImg}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/admission-poster.jpg';
+                  }}
+                  alt="Sadia Online Quran Academy & Islamic Center Admission Open Poster Flyer - Learn Quran Online with Hafiza Sadia"
                   referrerPolicy="no-referrer"
                   loading="lazy"
                   width={500}

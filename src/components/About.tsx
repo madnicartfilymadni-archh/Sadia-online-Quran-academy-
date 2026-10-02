@@ -11,6 +11,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import { ACADEMY_INFO } from '../data/academyData';
+import studyDeskImg from '../assets/images/academy_study_desk_1790968352808.jpg';
 
 interface AboutProps {
   onOpenTrialModal: () => void;
@@ -65,7 +66,10 @@ export const About: React.FC<AboutProps> = ({ onOpenTrialModal }) => {
               
               <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white">
                 <img
-                  src="/src/assets/images/academy_study_desk_1790968352808.jpg"
+                  src={studyDeskImg}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/academy-desk.jpg';
+                  }}
                   alt="Online Quran study desk setup with Holy Quran and tablet for one-to-one learning with Hafiza Sadia"
                   referrerPolicy="no-referrer"
                   loading="lazy"

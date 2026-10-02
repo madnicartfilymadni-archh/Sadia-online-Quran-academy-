@@ -1,6 +1,7 @@
 import React from 'react';
 import { MessageCircle, ArrowRight, ShieldCheck, UserCheck, Clock, Video } from 'lucide-react';
 import { ACADEMY_INFO } from '../data/academyData';
+import heroQuranImg from '../assets/images/hero_quran_learning_1790968330783.jpg';
 
 interface HeroProps {
   onOpenTrialModal: () => void;
@@ -112,8 +113,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrialModal }) => {
               {/* Main Visual Card */}
               <div className="relative rounded-2xl overflow-hidden border border-emerald-900/10 shadow-xl bg-white">
                 <img
-                  src="/src/assets/images/hero_quran_learning_1790968330783.jpg"
-                  alt="Holy Quran on carved wooden rehal stand for Sadia Online Quran Academy one-to-one classes"
+                  src={heroQuranImg}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/hero-quran.jpg';
+                  }}
+                  alt="Holy Quran on carved wooden rehal stand for Sadia Online Quran Academy & Islamic Center one-to-one classes"
                   referrerPolicy="no-referrer"
                   fetchPriority="high"
                   width={600}

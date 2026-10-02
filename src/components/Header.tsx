@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, BookOpen, MessageCircle } from 'lucide-react';
 import { ACADEMY_INFO } from '../data/academyData';
+import logoImage from '../assets/images/sadia_academy_logo_1790971288578.jpg';
 
 interface HeaderProps {
   onOpenTrialModal: () => void;
@@ -30,7 +31,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTrialModal }) => {
           <a href="#home" className="flex items-center gap-2.5 group">
             <div className="w-11 h-11 rounded-xl overflow-hidden bg-slate-950 border border-amber-500/30 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform shrink-0">
               <img
-                src="/src/assets/images/sadia_academy_logo_1790971288578.jpg"
+                src={logoImage}
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/logo.jpg';
+                }}
                 alt="Sadia Online Quran Academy & Islamic Center Official Logo"
                 className="w-full h-full object-cover"
                 width={44}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BookOpen, MessageCircle, PhoneCall, Heart } from 'lucide-react';
 import { ACADEMY_INFO, COURSES } from '../data/academyData';
+import logoImage from '../assets/images/sadia_academy_logo_1790971288578.jpg';
 
 export const Footer: React.FC = () => {
   return (
@@ -14,7 +15,10 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-xl overflow-hidden bg-slate-900 border border-amber-500/30 flex items-center justify-center shadow-sm shrink-0">
                 <img
-                  src="/src/assets/images/sadia_academy_logo_1790971288578.jpg"
+                  src={logoImage}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/logo.jpg';
+                  }}
                   alt="Sadia Online Quran Academy & Islamic Center Logo"
                   className="w-full h-full object-cover"
                   width={48}
