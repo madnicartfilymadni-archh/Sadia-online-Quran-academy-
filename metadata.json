@@ -1,0 +1,6 @@
+{
+  "name": "Sadia Online Quran Academy",
+  "description": "Online one-to-one Quran classes for children, girls and women with flexible timings, Tajweed, Noorani Qaida, Nazra, and personal attention by Hafiza Sadia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
