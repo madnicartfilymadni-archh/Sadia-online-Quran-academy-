@@ -1,32 +1,53 @@
-import { Course, FAQItem } from '../types';
+import { Course, FAQItem, TestimonialItem } from '../types';
 
 export const ACADEMY_INFO = {
   name: 'Sadia Online Quran Academy & Islamic Center',
+  shortName: 'Sadia Quran Academy',
   tagline: 'Learn Quran Online With Ease & Confidence',
+  internationalTagline: 'Premier 1-on-1 Distance Learning for Kids, Girls & Women Worldwide',
   teacher: 'Hafiza Sadia',
-  role: 'Quran Teacher',
+  role: 'Head Quran & Tajweed Instructor',
+  credentials: 'Certified Hafiza of the Holy Quran · Sanad in Tajweed & Qira’at',
   phoneDisplay: '03086804058',
   phoneRaw: '03086804058',
   whatsappUrl: 'https://wa.me/923086804058',
   monthlyFee: 'PKR 2,000 / Month',
-  audience: 'Children, Girls and Women',
-  platform: 'Zoom / WhatsApp',
+  internationalFeeNote: 'Highly affordable worldwide equivalent · No admission fee',
+  audience: 'Children (Boys & Girls), Teenage Girls, and Adult Women',
+  platform: 'Zoom / WhatsApp Live Virtual Classroom',
   heroDescription: 'Online one-to-one Quran classes for children, girls and women with flexible timings and personal attention.',
+  academicSession: 'Academic Session 2026 Admissions Open',
 };
+
+export const GLOBAL_METRICS = [
+  { value: '1:1', label: 'Private Mentoring', detail: 'Zero crowded batches; undivided focus' },
+  { value: '100%', label: 'Female Faculty', detail: 'Safe, modest & comfortable for sisters & kids' },
+  { value: 'Global', label: 'Timezone Flexibility', detail: 'UK, USA, Gulf, Europe & Pakistan slots' },
+  { value: 'Free', label: 'Diagnostic Assessment', detail: 'Comprehensive evaluation before enrollment' },
+];
 
 export const COURSES: Course[] = [
   {
     id: 'noorani-qaida',
     title: 'Noorani Qaida',
     arabicTitle: 'نوراني قاعدة',
+    category: 'foundation',
+    level: 'Level 1: Foundation',
+    duration: '2 - 4 Months (Pace Adaptive)',
     description: 'The essential foundation for beginners to learn Arabic letters, correct pronunciation (Makharij), and phonetic joining rules.',
     suitableFor: 'Complete beginners, young kids, and adult sisters starting from scratch.',
+    prerequisites: 'None — Designed from the absolute first Arabic letter.',
     highlights: [
-      'Arabic Alphabet recognition & phonetics',
-      'Correct articulation points (Makharij)',
+      'Arabic Alphabet recognition & precise phonetics',
+      'Correct articulation points (Makharij al-Huroof)',
       'Letter compound forms & Harakaat (vowels)',
-      'Tanween, Sukoon, Tashdeed & Madd rules',
-      'Gradual progression to Quranic words'
+      'Tanween, Sukoon, Tashdeed & Madd joining rules',
+      'Gradual progression to reading Quranic words'
+    ],
+    learningOutcomes: [
+      'Accurate identification and vocalization of all 28 Arabic letters',
+      'Flawless reading of joint Arabic words without hesitation',
+      'Seamless readiness to transition directly to the Holy Quran'
     ],
     icon: 'BookOpen'
   },
@@ -34,14 +55,23 @@ export const COURSES: Course[] = [
     id: 'nazra-quran',
     title: 'Nazra Quran',
     arabicTitle: 'ناظرہ قرآن',
+    category: 'recitation',
+    level: 'Level 2: Recitation Fluency',
+    duration: '6 - 12 Months (Custom Pace)',
     description: 'Learn to read the Holy Quran fluently and correctly with proper vocalization, punctuation, and smooth rhythm.',
     suitableFor: 'Students who completed Qaida and wish to recite the complete Quran with accuracy.',
+    prerequisites: 'Completion of Noorani Qaida or basic letter joining skills.',
     highlights: [
-      'Fluent recitation of Quranic verses',
-      'Recognition of Waqf (stopping) signs',
-      'Correction of common recitation mistakes',
-      'Daily supervised reading & practice',
-      'Regular pronunciation checks & correction'
+      'Fluent continuous recitation of Quranic verses',
+      'Recognition of Waqf (stopping & pausing) symbols',
+      'Systematic correction of common vocalization errors',
+      'Daily supervised reading & oral feedback',
+      'Confidence building and continuous rhythm flow'
+    ],
+    learningOutcomes: [
+      'Confident, fluent reading of any Surah in the Holy Quran',
+      'Proper pacing and adherence to Quranic pauses and stops',
+      'Self-correction ability during independent recitation'
     ],
     icon: 'BookMarked'
   },
@@ -49,14 +79,23 @@ export const COURSES: Course[] = [
     id: 'quran-tajweed',
     title: 'Quran with Tajweed',
     arabicTitle: 'تجويد القرآن',
+    category: 'tajweed',
+    level: 'Level 3: Classical Tajweed Mastery',
+    duration: '4 - 8 Months',
     description: 'Master the rules of Tajweed to recite the Holy Quran beautifully and accurately as revealed to Prophet Muhammad (PBUH).',
     suitableFor: 'Intermediate to advanced readers seeking perfection in Quranic rules and melody.',
+    prerequisites: 'Basic Nazra Quran reading ability.',
     highlights: [
       'Rules of Noon Saakin & Tanween (Izhar, Idgham, Iqlab, Ikhfa)',
-      'Rules of Meem Saakin & Qalqalah',
-      'Makharij al-Huroof (precise tongue/throat positions)',
-      'Heavy & Light letters (Tafkheem & Tarqeeq)',
-      'Madd types and syllable elongation'
+      'Rules of Meem Saakin & Qalqalah mechanics',
+      'Makharij al-Huroof (precise tongue, throat & lip positions)',
+      'Heavy & Light letters (Tafkheem & Tarqeeq discipline)',
+      'Madd types and syllable elongation counts'
+    ],
+    learningOutcomes: [
+      'Recitation reflecting classical Prophetic Tajweed standards',
+      'Theoretical knowledge and practical execution of Tajweed laws',
+      'Melodious, reverent, and precise Quranic delivery'
     ],
     icon: 'Sparkles'
   },
@@ -64,14 +103,23 @@ export const COURSES: Course[] = [
     id: 'hifz-quran',
     title: 'Hifz-e-Quran',
     arabicTitle: 'حفظ القرآن',
+    category: 'hifz',
+    level: 'Specialized: Memorization Track',
+    duration: '1 - 3 Years (Flexible Milestones)',
     description: 'Structured Quran memorization program with personal one-to-one supervision and a systematic daily revision plan.',
-    suitableFor: 'Dedicated children, girls, and women wanting to memorize Surahs or the complete Quran.',
+    suitableFor: 'Dedicated children, girls, and women wanting to memorize Surahs, Juz Amma, or the complete Quran.',
+    prerequisites: 'Accurate Nazra reading with Tajweed.',
     highlights: [
-      'Daily Sabaq (new memorization lesson)',
-      'Daily Sabqi (recent memorized portions)',
-      'Systematic Manzil (long-term revision)',
-      'Retention techniques & strong recall drills',
-      'Encouraging and gentle pace'
+      'Daily Sabaq (new memorization lesson target)',
+      'Daily Sabqi (recent memorized portions review)',
+      'Systematic Manzil (long-term cumulative revision cycle)',
+      'Retention memory techniques & mental recall drills',
+      'Encouraging, gentle, and burnout-free pacing'
+    ],
+    learningOutcomes: [
+      'Solid, long-term memorization with crystal-clear recall',
+      'Strong discipline in daily Quranic revision habits',
+      'Preparedness for formal Hifz milestones and Surah retention'
     ],
     icon: 'GraduationCap'
   },
@@ -79,14 +127,23 @@ export const COURSES: Course[] = [
     id: 'basic-islamic-teachings',
     title: 'Basic Islamic Teachings',
     arabicTitle: 'اسلامی تعلیمات',
+    category: 'islamic-studies',
+    level: 'Core Knowledge: Faith & Practice',
+    duration: '3 - 6 Months',
     description: 'Essential foundational knowledge of Islamic beliefs, practical acts of worship, Salah method, and daily Islamic manners.',
     suitableFor: 'Young students and beginners seeking essential Islamic understanding and values.',
+    prerequisites: 'None — open to all ages.',
     highlights: [
       'Step-by-step Practical Salah (Namaz) with translation',
-      'Six Kalimahs with meanings',
-      'Correct method of Wudu (Ablution) and Taharah',
-      'Core Islamic pillars and basic beliefs',
-      'Daily Islamic manners, etiquettes, and Akhlaaq'
+      'Six Kalimahs with word-by-word meanings',
+      'Correct method of Wudu (Ablution) and Taharah purity',
+      'Core Islamic pillars and fundamental articles of faith',
+      'Daily Islamic manners, etiquettes, and noble Akhlaaq'
+    ],
+    learningOutcomes: [
+      'Confidence in performing daily Salah and Wudu independently',
+      'Solid grounding in essential Islamic identity and daily ethics',
+      'Knowledge of basic Islamic obligations and daily Sunnahs'
     ],
     icon: 'Compass'
   },
@@ -94,16 +151,64 @@ export const COURSES: Course[] = [
     id: 'basic-duas',
     title: 'Basic Duas',
     arabicTitle: 'مسنون دعائیں',
+    category: 'islamic-studies',
+    level: 'Core Knowledge: Daily Masnoon Prayers',
+    duration: '2 - 3 Months',
     description: 'Learn essential daily Masnoon supplications for every routine moment in life, from morning to night.',
     suitableFor: 'Children, girls, and women wanting to enrich their daily routine with Sunnah prayers.',
+    prerequisites: 'None.',
     highlights: [
-      'Duas before and after eating meals',
-      'Duas for waking up and going to sleep',
-      'Entering and leaving home, Masjid, and washroom',
+      'Duas before and after meals and water intake',
+      'Duas for waking up, morning remembrance, and sleep',
+      'Entering and leaving home, Masjid, and daily routines',
       'Dua-e-Qunoot and Ayat-ul-Kursi memorization',
-      'Morning and evening protection supplications'
+      'Morning and evening protection supplications (Adhkar)'
+    ],
+    learningOutcomes: [
+      'Daily remembrance integrated seamlessly into life routines',
+      'Accurate Arabic pronunciation of essential protective Duas',
+      'Deep appreciation of Sunnah supplications'
     ],
     icon: 'HeartHandshake'
+  }
+];
+
+export const TESTIMONIALS: TestimonialItem[] = [
+  {
+    id: 't-1',
+    studentOrParent: 'Mrs. Fatima Al-Hashimi',
+    location: 'London, United Kingdom',
+    category: 'Mother of 7-year-old student',
+    course: 'Noorani Qaida & Basic Duas',
+    review: 'Finding a reliable, gentle female teacher in the UK timezone was difficult until we found Hafiza Sadia. In just 3 months, my daughter went from knowing zero Arabic to reading joint words fluently. Hafiza Sadia is exceptionally patient and punctual.',
+    rating: 5
+  },
+  {
+    id: 't-2',
+    studentOrParent: 'Amina Tariq',
+    location: 'Houston, Texas, USA',
+    category: 'Adult Student (Sister)',
+    course: 'Quran with Tajweed',
+    review: 'As an adult sister living in the US, I always hesitated to join local weekend classes due to busy work timings. The one-to-one virtual sessions with Hafiza Sadia gave me the private, respectful environment I needed. Her Tajweed instruction is clear and rewarding.',
+    rating: 5
+  },
+  {
+    id: 't-3',
+    studentOrParent: 'Dr. Zeeshan & Dr. Maryam',
+    location: 'Dubai, UAE',
+    category: 'Parents of 2 young girls',
+    course: 'Nazra Quran & Daily Salah',
+    review: 'Both of our daughters look forward to their daily classes. Hafiza Sadia’s method is encouraging rather than stressful. The screen-sharing format on Zoom works flawlessly, and the monthly fee is remarkably modest for this level of dedication.',
+    rating: 5
+  },
+  {
+    id: 't-4',
+    studentOrParent: 'Saima Khan',
+    location: 'Lahore, Pakistan',
+    category: 'College Student',
+    course: 'Hifz-e-Quran (Selected Surahs)',
+    review: 'Hafiza Sadia understands the memorization process deeply. Her daily Sabaq-Sabqi-Manzil discipline helped me memorize Surah Al-Baqarah and Juz Amma with strong retention. Highly recommended for any sister.',
+    rating: 5
   }
 ];
 

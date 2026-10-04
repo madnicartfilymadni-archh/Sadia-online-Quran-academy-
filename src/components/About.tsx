@@ -8,7 +8,10 @@ import {
   Video,
   ArrowRight,
   MessageCircle,
-  CheckCircle
+  CheckCircle2,
+  ShieldCheck,
+  Award,
+  Globe2
 } from 'lucide-react';
 import { ACADEMY_INFO } from '../data/academyData';
 import studyDeskImg from '../assets/images/academy_study_desk_1790968352808.jpg';
@@ -19,54 +22,54 @@ interface AboutProps {
 }
 
 export const About: React.FC<AboutProps> = ({ onOpenTrialModal }) => {
-  const points = [
+  const pedagogicalStandards = [
     {
-      title: 'One-to-one online classes',
-      desc: 'Direct, focused private lessons with dedicated time and individual attention.',
+      title: 'Dedicated One-to-One Focus',
+      desc: 'No shared classroom time or group distractions. 100% of the teacher’s attention is focused solely on your recitation.',
       icon: UserCheck
     },
     {
-      title: 'Personal attention',
-      desc: 'Each student learns at their comfortable speed with continuous feedback and encouragement.',
-      icon: Sparkles
-    },
-    {
-      title: 'Flexible schedule',
-      desc: 'Choose convenient morning, afternoon, or evening class slots that fit your routine.',
+      title: 'Worldwide Timezone Flexibility',
+      desc: 'Seamlessly schedule classes across UK (GMT), North America (EST/CST/PST), Gulf (GST), and Pakistan Standard Time.',
       icon: Clock
     },
     {
-      title: 'Suitable for beginners',
-      desc: 'Starting from the basics of Arabic letters (Qaida) to fluent Quran recitation with Tajweed.',
-      icon: Home
+      title: 'Safeguarded Sisters & Kids Environment',
+      desc: 'Taught by a verified female teacher in the safety, comfort, and modesty of your home with zero commute.',
+      icon: ShieldCheck
     },
     {
-      title: 'Classes for children, girls and women',
-      desc: 'A safe, respectful, and encouraging Islamic environment under a female teacher.',
-      icon: Users2
+      title: 'Gentle, Encouraging Pedagogy',
+      desc: 'Patience-first methodology designed especially to build confidence in young beginners and hesitant adult sisters.',
+      icon: Sparkles
     },
     {
-      title: 'Online learning through Zoom / WhatsApp',
-      desc: 'Easy live video/audio access from anywhere without travel hassles or complex setups.',
+      title: 'Interactive HD Digital Classroom',
+      desc: 'Crystal-clear audio and live screen sharing of color-coded Tajweed Mushaf and Noorani Qaida on Zoom or WhatsApp.',
       icon: Video
+    },
+    {
+      title: 'Continuous Progress Tracking',
+      desc: 'Regular oral evaluations and feedback to ensure steady mastery before advancing to subsequent chapters.',
+      icon: Award
     }
   ];
 
   return (
-    <section id="about" className="py-16 md:py-24 bg-[#F8FAF9] border-y border-slate-200/70 relative">
+    <section id="about" className="py-16 md:py-24 bg-[#F8FAF7] border-y border-slate-200/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: Image Asset */}
+          {/* Left Column: Image Frame & Live Environment Proof */}
           <div className="lg:col-span-5 order-2 lg:order-1">
             <ScrollReveal variant="scale" delayMs={50}>
               <div className="relative group">
                 
-                {/* Soft decorative halo */}
-                <div className="absolute -inset-2 bg-gradient-to-tr from-emerald-600/10 to-teal-500/10 rounded-3xl blur-lg transition-opacity duration-300 group-hover:opacity-100" />
+                {/* Decorative Halo */}
+                <div className="absolute -inset-2 bg-gradient-to-tr from-emerald-600/10 to-amber-500/10 rounded-3xl blur-xl" />
                 
-                <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white transition-transform duration-500 group-hover:scale-[1.01]">
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white">
                   <img
                     src={studyDeskImg}
                     onError={(e) => {
@@ -77,93 +80,107 @@ export const About: React.FC<AboutProps> = ({ onOpenTrialModal }) => {
                     loading="lazy"
                     width={600}
                     height={450}
-                    className="w-full h-80 sm:h-96 object-cover"
+                    className="w-full h-84 sm:h-96 object-cover transition-transform duration-500 group-hover:scale-[1.01]"
                   />
 
+                  {/* Virtual Classroom Feature Strip */}
                   <div className="p-5 bg-white border-t border-slate-100">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-800 font-bold shrink-0">
-                        1:1
-                      </div>
-                      <div>
-                        <div className="text-sm font-bold text-slate-900">
-                          Live One-to-One Quran Lessons
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-800 font-bold shrink-0">
+                          1:1
                         </div>
-                        <div className="text-xs text-slate-500">
-                          Zoom &amp; WhatsApp Online Classes · Hafiza Sadia
+                        <div>
+                          <div className="text-sm font-bold text-slate-900">
+                            Private Virtual Classroom
+                          </div>
+                          <div className="text-xs text-slate-500">
+                            Zoom &amp; WhatsApp Live · Head Instructor Hafiza Sadia
+                          </div>
                         </div>
                       </div>
+                      <span className="text-xs font-bold text-emerald-700 font-mono">
+                        PKR 2,000 / mo
+                      </span>
                     </div>
                   </div>
+                </div>
+
+                {/* International Distance Learning Note */}
+                <div className="mt-4 p-4 rounded-xl bg-white border border-slate-200/90 shadow-2xs flex items-center gap-3 text-xs text-slate-600">
+                  <Globe2 className="w-5 h-5 text-emerald-700 shrink-0" />
+                  <span>Welcoming overseas students from the UK, USA, Canada, UAE, Europe, and Pakistan.</span>
                 </div>
 
               </div>
             </ScrollReveal>
           </div>
 
-          {/* Right Column: Key Copy */}
+          {/* Right Column: Academic Philosophy & Standards */}
           <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
             <ScrollReveal variant="fade-up" delayMs={100}>
-              <div className="space-y-6">
+              <div className="space-y-6 text-left">
                 
                 <div className="space-y-2">
                   <div className="text-xs font-bold uppercase tracking-widest text-emerald-800">
-                    About The Academy
+                    Academic Mission &amp; Methodology
                   </div>
                   <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
-                    Learn Quran From The Comfort of Your Home
+                    An Authentic, Modern Approach to Quranic Distance Education
                   </h2>
                 </div>
 
                 <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                  <strong>Sadia Online Quran Academy &amp; Islamic Center</strong> provides personalized, one-to-one Quranic education tailored specifically for young children, girls, and adult women. We remove the barriers of travel, rigid schedules, and crowded classrooms by delivering gentle, authentic Quran teaching directly to your screen.
+                  <strong>Sadia Online Quran Academy &amp; Islamic Center</strong> was established to provide children, young girls, and adult women with prestigious, personal Quranic instruction without the barriers of commute, rigid classroom timings, or crowded group madrasas.
                 </p>
 
-                {/* 6 Key Points Grid */}
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                  Under the direct instruction of <strong>Hafiza Sadia</strong>, every lesson is delivered with precision in Arabic Makharij (articulation), patient repetition, and classical Tajweed rules, fostering genuine love and reverence for the Words of Allah SWT.
+                </p>
+
+                {/* 6 Standards Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                  {points.map((pt, idx) => {
-                    const IconComponent = pt.icon;
+                  {pedagogicalStandards.map((item, idx) => {
+                    const IconComponent = item.icon;
                     return (
                       <div 
                         key={idx} 
-                        className="group p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs hover:border-emerald-300 hover:shadow-xs transition-all duration-200 ease-out hover:-translate-y-0.5"
+                        className="card-academic p-4 rounded-xl shadow-2xs flex items-start gap-3"
                       >
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 text-emerald-700 transition-colors group-hover:bg-emerald-100/70">
-                            <IconComponent className="w-4 h-4" />
-                          </div>
-                          <div>
-                            <h3 className="text-sm font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">
-                              {pt.title}
-                            </h3>
-                            <p className="text-xs text-slate-600 mt-1 leading-normal">
-                              {pt.desc}
-                            </p>
-                          </div>
+                        <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 text-emerald-800 mt-0.5">
+                          <IconComponent className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <h3 className="text-sm font-bold text-slate-900">
+                            {item.title}
+                          </h3>
+                          <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                            {item.desc}
+                          </p>
                         </div>
                       </div>
                     );
                   })}
                 </div>
 
-                {/* CTAs */}
-                <div className="flex flex-wrap items-center gap-4 pt-4">
+                {/* Admissions CTAs */}
+                <div className="flex flex-wrap items-center gap-4 pt-3">
                   <button
                     onClick={onOpenTrialModal}
-                    className="btn-interactive px-6 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm shadow-sm flex items-center gap-2 cursor-pointer"
+                    className="btn-interactive px-6 py-3.5 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-sm shadow-xs flex items-center gap-2 cursor-pointer transition-all"
                   >
-                    <span>Book Free Trial Class</span>
-                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                    <span>Book Your Free Placement Session</span>
+                    <ArrowRight className="w-4 h-4 text-amber-300" />
                   </button>
 
                   <a
                     href={ACADEMY_INFO.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-interactive inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-semibold text-sm shadow-2xs cursor-pointer"
+                    className="btn-interactive inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-2xs cursor-pointer transition-all"
                   >
-                    <MessageCircle className="w-4 h-4 text-emerald-600" />
-                    <span>WhatsApp: {ACADEMY_INFO.phoneDisplay}</span>
+                    <MessageCircle className="w-4 h-4 fill-current" />
+                    <span>Inquire on WhatsApp ({ACADEMY_INFO.phoneDisplay})</span>
                   </a>
                 </div>
 

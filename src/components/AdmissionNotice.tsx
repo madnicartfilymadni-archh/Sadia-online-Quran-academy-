@@ -1,6 +1,6 @@
 import React from 'react';
-import { Sparkles, Calendar, MessageCircle, ArrowRight } from 'lucide-react';
-import { ACADEMY_INFO } from '../data/academyData';
+import { Calendar, MessageCircle, ArrowRight, ShieldCheck, Globe2, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ACADEMY_INFO, GLOBAL_METRICS } from '../data/academyData';
 import { ScrollReveal } from './common/ScrollReveal';
 
 interface AdmissionNoticeProps {
@@ -9,54 +9,51 @@ interface AdmissionNoticeProps {
 
 export const AdmissionNotice: React.FC<AdmissionNoticeProps> = ({ onOpenTrialModal }) => {
   return (
-    <section className="py-6 bg-slate-900 text-white relative overflow-hidden">
-      {/* Subtle emerald texture */}
-      <div className="absolute inset-0 bg-gradient-to-r from-emerald-950 via-slate-900 to-teal-950 opacity-90" />
-      
+    <section className="py-6 bg-[#041710] text-white relative overflow-hidden border-b border-emerald-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal variant="fade-up">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-            
-            <div className="flex flex-col sm:flex-row items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-emerald-600/30 border border-emerald-500/30 flex items-center justify-center shrink-0">
-                <Sparkles className="w-6 h-6 text-emerald-400" />
-              </div>
-              <div>
-                <div className="flex items-center justify-center md:justify-start gap-2">
-                  <span className="text-xs font-bold uppercase tracking-widest text-amber-400">
-                    ADMISSION OPEN
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-2 items-center">
+            {GLOBAL_METRICS.map((metric, idx) => (
+              <div key={idx} className="flex flex-col text-left border-l border-emerald-800/60 pl-4">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-2xl sm:text-3xl font-extrabold text-amber-300 font-mono tracking-tight">
+                    {metric.value}
                   </span>
-                  <span className="text-slate-400 hidden sm:inline">·</span>
-                  <span className="text-xs text-emerald-300 font-medium">Limited Slots Available</span>
+                  <span className="text-xs sm:text-sm font-bold text-white tracking-tight">
+                    {metric.label}
+                  </span>
                 </div>
-                <p className="text-lg sm:text-xl font-bold text-white tracking-tight">
-                  Free Trial Class Available – Enroll Today
-                </p>
-                <p className="text-xs sm:text-sm text-slate-300">
-                  Children, girls &amp; women can start learning with Hafiza Sadia. Flexible morning &amp; evening schedules.
+                <p className="text-[11px] sm:text-xs text-emerald-200/70 mt-0.5 leading-snug">
+                  {metric.detail}
                 </p>
               </div>
-            </div>
+            ))}
+          </div>
 
-            <div className="flex items-center gap-3 w-full sm:w-auto justify-center">
+          <div className="mt-4 pt-4 border-t border-emerald-900/60 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-300">
+            <div className="flex items-center gap-2 text-center sm:text-left">
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              <span>Admissions Active for 2026 Academic Term · Zoom &amp; WhatsApp Distance Learning</span>
+            </div>
+            <div className="flex items-center gap-3">
               <button
                 onClick={onOpenTrialModal}
-                className="btn-interactive px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-sm flex items-center gap-2 whitespace-nowrap cursor-pointer"
+                className="btn-interactive inline-flex items-center gap-1.5 text-xs font-bold text-amber-300 hover:text-amber-200 transition-colors cursor-pointer"
               >
-                <span>Book Free Trial</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Request Free Evaluation</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
+              <span className="text-emerald-800" aria-hidden="true">|</span>
               <a
                 href={ACADEMY_INFO.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-interactive px-5 py-2.5 rounded-lg bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-sm shadow-sm flex items-center gap-2 whitespace-nowrap cursor-pointer"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-white hover:text-emerald-300 transition-colors cursor-pointer"
               >
-                <MessageCircle className="w-4 h-4 fill-current" />
-                <span>WhatsApp Now</span>
+                <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
+                <span>WhatsApp: {ACADEMY_INFO.phoneDisplay}</span>
               </a>
             </div>
-
           </div>
         </ScrollReveal>
       </div>
