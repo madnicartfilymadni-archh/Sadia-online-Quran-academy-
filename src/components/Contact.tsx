@@ -11,6 +11,7 @@ import {
   Calendar
 } from 'lucide-react';
 import { ACADEMY_INFO, COURSES } from '../data/academyData';
+import { ScrollReveal } from './common/ScrollReveal';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -41,7 +42,7 @@ ${formData.message ? `- *Additional Note:* ${formData.message}` : ''}
 
 Looking forward to your guidance for the free trial class. JazakAllah Khair.`;
 
-    const targetUrl = `https://wa.me/923086804050?text=${encodeURIComponent(text)}`;
+    const targetUrl = `https://wa.me/923086804058?text=${encodeURIComponent(text)}`;
     setFormSubmitted(true);
 
     // Open WhatsApp in new tab
@@ -52,63 +53,67 @@ Looking forward to your guidance for the free trial class. JazakAllah Khair.`;
     <section id="contact" className="py-16 md:py-24 bg-[#F8FAF9] border-t border-slate-200/70 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="text-xs font-bold uppercase tracking-widest text-emerald-800 mb-2">
-            Get In Touch
+        <ScrollReveal variant="fade-up">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <div className="text-xs font-bold uppercase tracking-widest text-emerald-800 mb-2">
+              Get In Touch
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+              Contact Sadia Online Quran Academy &amp; Islamic Center
+            </h2>
+            <p className="mt-3 text-base text-slate-600">
+              Reach out directly on WhatsApp to schedule your trial class or ask any questions.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-            Contact Sadia Online Quran Academy &amp; Islamic Center
-          </h2>
-          <p className="mt-3 text-base text-slate-600">
-            Reach out directly on WhatsApp to schedule your trial class or ask any questions.
-          </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto">
           
           {/* Left Column: Direct Academy Details & Big WhatsApp CTA */}
-          <div className="lg:col-span-5 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
-            
-            <div>
-              <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">
-                Official Academy Contact
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900">
-                {ACADEMY_INFO.name}
-              </h3>
-              <p className="text-sm text-slate-600 mt-1">
-                Teacher: <strong>{ACADEMY_INFO.teacher}</strong> ({ACADEMY_INFO.role})
-              </p>
-            </div>
-
-            {/* Big WhatsApp Card & Button */}
-            <div className="bg-emerald-50 border border-emerald-200/80 rounded-2xl p-6 text-center space-y-3">
-              <div className="w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center mx-auto shadow-sm">
-                <MessageCircle className="w-6 h-6 fill-current" />
-              </div>
-              
-              <div>
-                <div className="text-xs text-slate-500 font-medium">Direct WhatsApp Line</div>
-                <div className="text-2xl font-extrabold text-slate-900 tracking-tight mt-0.5">
-                  {ACADEMY_INFO.phoneDisplay}
+          <div className="lg:col-span-5">
+            <ScrollReveal variant="fade-up" delayMs={50}>
+              <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6 transition-all duration-300 hover:shadow-md">
+                
+                <div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">
+                    Official Academy Contact
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900">
+                    {ACADEMY_INFO.name}
+                  </h3>
+                  <p className="text-sm text-slate-600 mt-1">
+                    Teacher: <strong>{ACADEMY_INFO.teacher}</strong> ({ACADEMY_INFO.role})
+                  </p>
                 </div>
-              </div>
 
-              <p className="text-xs text-slate-600">
-                Available daily for inquiries, timetable scheduling &amp; trial bookings.
-              </p>
+                {/* Big WhatsApp Card & Button */}
+                <div className="bg-emerald-50 border border-emerald-200/80 rounded-2xl p-6 text-center space-y-3">
+                  <div className="w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center mx-auto shadow-sm">
+                    <MessageCircle className="w-6 h-6 fill-current" />
+                  </div>
+                  
+                  <div>
+                    <div className="text-xs text-slate-500 font-medium">Direct WhatsApp Line</div>
+                    <div className="text-2xl font-extrabold text-slate-900 tracking-tight mt-0.5">
+                      {ACADEMY_INFO.phoneDisplay}
+                    </div>
+                  </div>
 
-              {/* Required Big WhatsApp Button */}
-              <a
-                href={ACADEMY_INFO.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-3.5 px-6 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-base transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
-              >
-                <MessageCircle className="w-5 h-5 fill-current" />
-                <span>Contact on WhatsApp</span>
-              </a>
-            </div>
+                  <p className="text-xs text-slate-600">
+                    Available daily for inquiries, timetable scheduling &amp; trial bookings.
+                  </p>
+
+                  {/* Required Big WhatsApp Button */}
+                  <a
+                    href={ACADEMY_INFO.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-interactive w-full py-3.5 px-6 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-base flex items-center justify-center gap-2 shadow-md hover:shadow-lg cursor-pointer"
+                  >
+                    <MessageCircle className="w-5 h-5 fill-current" />
+                    <span>Contact on WhatsApp</span>
+                  </a>
+                </div>
 
             {/* Direct Phone Calling option */}
             <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 border border-slate-100">
@@ -141,15 +146,19 @@ Looking forward to your guidance for the free trial class. JazakAllah Khair.`;
               </div>
             </div>
 
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* Right Column: Quick Trial Booking / WhatsApp Message Generator */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-            
-            <div className="mb-6">
-              <h3 className="text-xl font-bold text-slate-900">
-                Quick Trial Booking Form
-              </h3>
+          <div className="lg:col-span-7">
+            <ScrollReveal variant="fade-up" delayMs={100}>
+              <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm transition-all duration-300 hover:shadow-md">
+                
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-slate-900">
+                    Quick Trial Booking Form
+                  </h3>
               <p className="text-xs sm:text-sm text-slate-600 mt-1">
                 Fill in your details below to instantly connect with Hafiza Sadia on WhatsApp.
               </p>
@@ -168,7 +177,7 @@ Looking forward to your guidance for the free trial class. JazakAllah Khair.`;
                       rel="noopener noreferrer" 
                       className="underline font-bold text-emerald-900"
                     >
-                      click here to message 03086804050
+                      click here to message {ACADEMY_INFO.phoneDisplay}
                     </a>.
                   </p>
                 </div>
@@ -287,7 +296,7 @@ Looking forward to your guidance for the free trial class. JazakAllah Khair.`;
 
               <button
                 type="submit"
-                className="w-full py-3.5 px-6 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2 shadow-xs cursor-pointer"
+                className="btn-interactive w-full py-3.5 px-6 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-xs cursor-pointer"
               >
                 <Send className="w-4 h-4" />
                 <span>Submit &amp; Open WhatsApp Chat</span>
@@ -299,6 +308,8 @@ Looking forward to your guidance for the free trial class. JazakAllah Khair.`;
 
             </form>
 
+              </div>
+            </ScrollReveal>
           </div>
 
         </div>

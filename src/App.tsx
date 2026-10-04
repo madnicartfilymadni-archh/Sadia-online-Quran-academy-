@@ -32,7 +32,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAFBF9] text-slate-800 selection:bg-emerald-100 selection:text-emerald-900">
+    <div className="min-h-screen flex flex-col bg-[#FAFBF9] text-slate-800 selection:bg-emerald-100 selection:text-emerald-900 overflow-x-clip relative">
+      {/* Subtle, non-blocking page load top progress transition */}
+      <div 
+        className="fixed top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-emerald-500 via-teal-400 to-amber-400 z-50 animate-page-bar origin-left pointer-events-none" 
+        aria-hidden="true" 
+      />
+
       {/* 1. Admission Announcement Banner */}
       <AdmissionBanner />
 

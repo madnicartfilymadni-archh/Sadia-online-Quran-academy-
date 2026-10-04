@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { ACADEMY_INFO } from '../data/academyData';
 import studyDeskImg from '../assets/images/academy_study_desk_1790968352808.jpg';
+import { ScrollReveal } from './common/ScrollReveal';
 
 interface AboutProps {
   onOpenTrialModal: () => void;
@@ -59,109 +60,115 @@ export const About: React.FC<AboutProps> = ({ onOpenTrialModal }) => {
           
           {/* Left Column: Image Asset */}
           <div className="lg:col-span-5 order-2 lg:order-1">
-            <div className="relative">
-              
-              {/* Soft decorative halo */}
-              <div className="absolute -inset-2 bg-gradient-to-tr from-emerald-600/10 to-teal-500/10 rounded-3xl blur-lg" />
-              
-              <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white">
-                <img
-                  src={studyDeskImg}
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = '/academy-desk.jpg';
-                  }}
-                  alt="Online Quran study desk setup with Holy Quran and tablet for one-to-one learning with Hafiza Sadia"
-                  referrerPolicy="no-referrer"
-                  loading="lazy"
-                  width={600}
-                  height={450}
-                  className="w-full h-80 sm:h-96 object-cover"
-                />
+            <ScrollReveal variant="scale" delayMs={50}>
+              <div className="relative group">
+                
+                {/* Soft decorative halo */}
+                <div className="absolute -inset-2 bg-gradient-to-tr from-emerald-600/10 to-teal-500/10 rounded-3xl blur-lg transition-opacity duration-300 group-hover:opacity-100" />
+                
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white transition-transform duration-500 group-hover:scale-[1.01]">
+                  <img
+                    src={studyDeskImg}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/academy-desk.jpg';
+                    }}
+                    alt="Online Quran study desk setup with Holy Quran and tablet for one-to-one learning with Hafiza Sadia"
+                    referrerPolicy="no-referrer"
+                    loading="lazy"
+                    width={600}
+                    height={450}
+                    className="w-full h-80 sm:h-96 object-cover"
+                  />
 
-                <div className="p-5 bg-white border-t border-slate-100">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-800 font-bold shrink-0">
-                      1:1
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold text-slate-900">
-                        Live One-to-One Quran Lessons
+                  <div className="p-5 bg-white border-t border-slate-100">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-800 font-bold shrink-0">
+                        1:1
                       </div>
-                      <div className="text-xs text-slate-500">
-                        Zoom &amp; WhatsApp Online Classes · Hafiza Sadia
+                      <div>
+                        <div className="text-sm font-bold text-slate-900">
+                          Live One-to-One Quran Lessons
+                        </div>
+                        <div className="text-xs text-slate-500">
+                          Zoom &amp; WhatsApp Online Classes · Hafiza Sadia
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-            </div>
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* Right Column: Key Copy */}
           <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
-            
-            <div className="space-y-2">
-              <div className="text-xs font-bold uppercase tracking-widest text-emerald-800">
-                About The Academy
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
-                Learn Quran From The Comfort of Your Home
-              </h2>
-            </div>
-
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              <strong>Sadia Online Quran Academy &amp; Islamic Center</strong> provides personalized, one-to-one Quranic education tailored specifically for young children, girls, and adult women. We remove the barriers of travel, rigid schedules, and crowded classrooms by delivering gentle, authentic Quran teaching directly to your screen.
-            </p>
-
-            {/* 6 Key Points Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              {points.map((pt, idx) => {
-                const IconComponent = pt.icon;
-                return (
-                  <div 
-                    key={idx} 
-                    className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs hover:border-emerald-300 transition-colors"
-                  >
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 text-emerald-700">
-                        <IconComponent className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-bold text-slate-900">
-                          {pt.title}
-                        </h3>
-                        <p className="text-xs text-slate-600 mt-1 leading-normal">
-                          {pt.desc}
-                        </p>
-                      </div>
-                    </div>
+            <ScrollReveal variant="fade-up" delayMs={100}>
+              <div className="space-y-6">
+                
+                <div className="space-y-2">
+                  <div className="text-xs font-bold uppercase tracking-widest text-emerald-800">
+                    About The Academy
                   </div>
-                );
-              })}
-            </div>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
+                    Learn Quran From The Comfort of Your Home
+                  </h2>
+                </div>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-4">
-              <button
-                onClick={onOpenTrialModal}
-                className="px-6 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm shadow-sm transition-colors flex items-center gap-2"
-              >
-                <span>Book Free Trial Class</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                  <strong>Sadia Online Quran Academy &amp; Islamic Center</strong> provides personalized, one-to-one Quranic education tailored specifically for young children, girls, and adult women. We remove the barriers of travel, rigid schedules, and crowded classrooms by delivering gentle, authentic Quran teaching directly to your screen.
+                </p>
 
-              <a
-                href={ACADEMY_INFO.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-semibold text-sm transition-colors"
-              >
-                <MessageCircle className="w-4 h-4 text-emerald-600" />
-                <span>WhatsApp: {ACADEMY_INFO.phoneDisplay}</span>
-              </a>
-            </div>
+                {/* 6 Key Points Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                  {points.map((pt, idx) => {
+                    const IconComponent = pt.icon;
+                    return (
+                      <div 
+                        key={idx} 
+                        className="group p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs hover:border-emerald-300 hover:shadow-xs transition-all duration-200 ease-out hover:-translate-y-0.5"
+                      >
+                        <div className="flex items-start gap-3">
+                          <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 text-emerald-700 transition-colors group-hover:bg-emerald-100/70">
+                            <IconComponent className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <h3 className="text-sm font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">
+                              {pt.title}
+                            </h3>
+                            <p className="text-xs text-slate-600 mt-1 leading-normal">
+                              {pt.desc}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
 
+                {/* CTAs */}
+                <div className="flex flex-wrap items-center gap-4 pt-4">
+                  <button
+                    onClick={onOpenTrialModal}
+                    className="btn-interactive px-6 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm shadow-sm flex items-center gap-2 cursor-pointer"
+                  >
+                    <span>Book Free Trial Class</span>
+                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                  </button>
+
+                  <a
+                    href={ACADEMY_INFO.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-interactive inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-semibold text-sm shadow-2xs cursor-pointer"
+                  >
+                    <MessageCircle className="w-4 h-4 text-emerald-600" />
+                    <span>WhatsApp: {ACADEMY_INFO.phoneDisplay}</span>
+                  </a>
+                </div>
+
+              </div>
+            </ScrollReveal>
           </div>
 
         </div>

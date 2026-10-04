@@ -12,14 +12,14 @@ interface CourseModalProps {
 export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onBookTrial }) => {
   if (!course) return null;
 
-  const whatsappEnrollUrl = `https://wa.me/923086804050?text=${encodeURIComponent(
+  const whatsappEnrollUrl = `https://wa.me/923086804058?text=${encodeURIComponent(
     `Assalam-o-Alaikum, I want to enroll / book a free trial class for the course: "${course.title}" at Sadia Online Quran Academy.`
   )}`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs animate-in fade-in duration-200">
       <div 
-        className="bg-white rounded-2xl max-w-xl w-full shadow-2xl border border-slate-200 overflow-hidden relative max-h-[90vh] flex flex-col"
+        className="bg-white rounded-2xl max-w-xl w-full shadow-2xl border border-slate-200 overflow-hidden relative max-h-[90vh] flex flex-col animate-fade-in-scale"
         role="dialog"
         aria-modal="true"
       >
@@ -27,7 +27,7 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onBoo
         <div className="bg-gradient-to-r from-emerald-800 to-teal-900 p-6 text-white relative">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+            className="btn-interactive absolute top-4 right-4 p-2 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -95,7 +95,7 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onBoo
               onClose();
               onBookTrial(course.title);
             }}
-            className="px-5 py-2.5 rounded-xl border border-slate-300 hover:bg-white text-slate-700 font-semibold text-sm transition-colors text-center"
+            className="btn-interactive px-5 py-2.5 rounded-xl border border-slate-300 hover:bg-white text-slate-700 font-semibold text-sm text-center cursor-pointer"
           >
             Fill Trial Form
           </button>
@@ -104,7 +104,7 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onBoo
             href={whatsappEnrollUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm transition-colors flex items-center justify-center gap-2 shadow-sm"
+            className="btn-interactive px-6 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-sm cursor-pointer"
           >
             <MessageCircle className="w-4 h-4 fill-current" />
             <span>Enroll on WhatsApp</span>

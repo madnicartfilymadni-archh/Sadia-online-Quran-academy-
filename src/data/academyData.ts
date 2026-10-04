@@ -5,9 +5,9 @@ export const ACADEMY_INFO = {
   tagline: 'Learn Quran Online With Ease & Confidence',
   teacher: 'Hafiza Sadia',
   role: 'Quran Teacher',
-  phoneDisplay: '03086804050',
-  phoneRaw: '03086804050',
-  whatsappUrl: 'https://wa.me/923086804050',
+  phoneDisplay: '03086804058',
+  phoneRaw: '03086804058',
+  whatsappUrl: 'https://wa.me/923086804058',
   monthlyFee: 'PKR 2,000 / Month',
   audience: 'Children, Girls and Women',
   platform: 'Zoom / WhatsApp',
@@ -150,7 +150,7 @@ export const HOW_IT_WORKS_STEPS = [
   {
     stepNumber: '01',
     title: 'Contact Us',
-    description: 'Message us on WhatsApp at 03086804050 or click Book Free Trial to share student details and preferred course.',
+    description: 'Message us on WhatsApp at 03086804058 or click Book Free Trial to share student details and preferred course.',
     icon: 'MessageCircle'
   },
   {
@@ -211,6 +211,6 @@ export const FAQS: FAQItem[] = [
   {
     id: 'faq-9',
     question: 'How can I contact the academy?',
-    answer: 'You can directly contact Hafiza Sadia on WhatsApp at 03086804050 (or click any of the WhatsApp buttons on this website) to ask questions, schedule timings, and book your free trial.'
+    answer: 'You can directly contact Hafiza Sadia on WhatsApp at 03086804058 (or click any of the WhatsApp buttons on this website) to ask questions, schedule timings, and book your free trial.'
   }
 ];

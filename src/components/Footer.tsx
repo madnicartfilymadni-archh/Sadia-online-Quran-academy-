@@ -2,60 +2,62 @@ import React from 'react';
 import { BookOpen, MessageCircle, PhoneCall, Heart } from 'lucide-react';
 import { ACADEMY_INFO, COURSES } from '../data/academyData';
 import logoImage from '../assets/images/sadia_academy_logo_1790971288578.jpg';
+import { ScrollReveal } from './common/ScrollReveal';
 
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-slate-950 text-slate-300 pt-16 pb-12 border-t border-slate-800 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800/80">
-          
-          {/* Col 1: Brand & Tagline with Official Logo */}
-          <div className="lg:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl overflow-hidden bg-slate-900 border border-amber-500/30 flex items-center justify-center shadow-sm shrink-0">
-                <img
-                  src={logoImage}
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = '/logo.jpg';
-                  }}
-                  alt="Sadia Online Quran Academy & Islamic Center Logo"
-                  className="w-full h-full object-cover"
-                  width={48}
-                  height={48}
-                  loading="lazy"
-                />
+        <ScrollReveal variant="fade-up">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800/80">
+            
+            {/* Col 1: Brand & Tagline with Official Logo */}
+            <div className="lg:col-span-5 space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl overflow-hidden bg-slate-900 border border-amber-500/30 flex items-center justify-center shadow-sm shrink-0">
+                  <img
+                    src={logoImage}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/logo.jpg';
+                    }}
+                    alt="Sadia Online Quran Academy & Islamic Center Logo"
+                    className="w-full h-full object-cover"
+                    width={48}
+                    height={48}
+                    loading="lazy"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-xl font-bold text-white tracking-tight leading-tight">
+                    {ACADEMY_INFO.name}
+                  </span>
+                  <span className="text-xs text-amber-300 font-medium">
+                    &amp; Islamic Center
+                  </span>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold text-white tracking-tight leading-tight">
-                  {ACADEMY_INFO.name}
-                </span>
-                <span className="text-xs text-amber-300 font-medium">
-                  &amp; Islamic Center
-                </span>
+
+              <p className="text-emerald-400 font-medium text-base">
+                "{ACADEMY_INFO.tagline}"
+              </p>
+
+              <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
+                Online one-to-one Quran classes for children, girls and women with flexible timings and personal attention by Hafiza Sadia.
+              </p>
+
+              <div className="pt-2 flex items-center gap-3">
+                <a
+                  href={ACADEMY_INFO.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-interactive inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold shadow-xs cursor-pointer"
+                >
+                  <MessageCircle className="w-4 h-4 fill-current" />
+                  <span>WhatsApp: {ACADEMY_INFO.phoneDisplay}</span>
+                </a>
               </div>
             </div>
-
-            <p className="text-emerald-400 font-medium text-base">
-              "{ACADEMY_INFO.tagline}"
-            </p>
-
-            <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
-              Online one-to-one Quran classes for children, girls and women with flexible timings and personal attention by Hafiza Sadia.
-            </p>
-
-            <div className="pt-2 flex items-center gap-3">
-              <a
-                href={ACADEMY_INFO.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold transition-colors"
-              >
-                <MessageCircle className="w-4 h-4 fill-current" />
-                <span>WhatsApp: {ACADEMY_INFO.phoneDisplay}</span>
-              </a>
-            </div>
-          </div>
 
           {/* Col 2: Quick Links */}
           <div className="lg:col-span-3 space-y-3">
@@ -157,6 +159,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
+        </ScrollReveal>
       </div>
     </footer>
   );

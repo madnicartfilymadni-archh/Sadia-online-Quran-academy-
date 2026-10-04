@@ -43,15 +43,15 @@ I would like to book a *Free Trial Class* at *${ACADEMY_INFO.name}*.
 
 Please let me know the available time for the trial class. JazakAllah Khair.`;
 
-    const url = `https://wa.me/923086804050?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/923086804058?text=${encodeURIComponent(text)}`;
     setSubmitted(true);
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs animate-in fade-in duration-150">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs animate-in fade-in duration-200">
       <div 
-        className="bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden relative max-h-[95vh] flex flex-col"
+        className="bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden relative max-h-[95vh] flex flex-col animate-fade-in-scale"
         role="dialog"
         aria-modal="true"
       >
@@ -59,7 +59,7 @@ Please let me know the available time for the trial class. JazakAllah Khair.`;
         <div className="bg-gradient-to-r from-emerald-800 to-teal-900 p-6 text-white relative">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+            className="btn-interactive absolute top-4 right-4 p-2 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -95,10 +95,10 @@ Please let me know the available time for the trial class. JazakAllah Khair.`;
                 href={ACADEMY_INFO.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-white font-bold text-sm shadow-md"
+                className="btn-interactive inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-white font-bold text-sm shadow-md cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
-                <span>Open WhatsApp (03086804050)</span>
+                <span>Open WhatsApp ({ACADEMY_INFO.phoneDisplay})</span>
               </a>
               <div className="pt-2">
                 <button
@@ -205,7 +205,7 @@ Please let me know the available time for the trial class. JazakAllah Khair.`;
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3.5 px-6 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="btn-interactive w-full py-3.5 px-6 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm shadow-md flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Send className="w-4 h-4" />
                   <span>Send Request &amp; Open WhatsApp</span>
